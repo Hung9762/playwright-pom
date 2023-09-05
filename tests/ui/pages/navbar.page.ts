@@ -40,7 +40,7 @@ export class Navbar extends Base {
     await this.tapElement(this.searchDropDown.getByText(bookName));
   }
 
-  async validaUserName(user: string) {
+  async validateUserName(user: string) {
     await expect(this.userMenu.getByText(user)).toBeVisible();
   }
 }
