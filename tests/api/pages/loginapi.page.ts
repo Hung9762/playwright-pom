@@ -17,13 +17,12 @@ export class LoginApi extends BaseApi {
   }
 
   async getToken() {
-    return this.userToken;
+    return this.userToken.toString();
   }
 
   async loginUserAPI(requestBody: object) {
     this.response = await this.makePost(this.loginURL, head, requestBody);
     this.responseBody = await this.response.json();
-    console.log(this.responseBody);
     this.userToken = 'Bearer ' + this.responseBody['token'];
   }
 }
